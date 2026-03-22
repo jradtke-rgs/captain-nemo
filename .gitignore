@@ -1,0 +1,5 @@
+# Override global gitignore — CLAUDE.md is intentionally part of this repo
+!CLAUDE.md
+
+# Claude Code local settings
+.claude/settings.local.json
