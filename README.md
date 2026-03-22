@@ -133,5 +133,7 @@ captain-nemo/
 - [ ] End-to-end validation
 
 ---
+## References
+https://docs.nvidia.com/dgx/dgx-spark/index.html
 
 > Built with [Claude Code](https://claude.ai/code) — Claude helped write every script and configuration in this repo.
