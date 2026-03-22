@@ -118,8 +118,11 @@ OpenClaw is designed for experimentation. NemoClaw is designed for situations wh
 
 ```
 captain-nemo/
+├── config/
+│   └── sandbox-policy.yaml      # NemoClaw sandbox network policy (nim_service + presets)
 ├── scripts/
-│   └── setup-mac-mini.sh   # Full host setup for Ubuntu 24.04
+│   ├── setup-mac-mini.sh        # Full host setup for Ubuntu 24.04 (NemoClaw host)
+│   └── setup-dgx-spark.sh       # NIM inference server setup on DGX Spark
 └── README.md
 ```
 
@@ -127,13 +130,17 @@ captain-nemo/
 
 - [x] Mac Mini host provisioned (Docker, OpenShell, Node.js 22, NemoClaw)
 - [x] NemoClaw onboarded
-- [ ] Configure inference to route to DGX Spark (on-prem, not cloud)
-- [ ] Lock network policy to DGX Spark only
-- [ ] DGX Spark inference server setup
-- [ ] End-to-end validation
+- [x] DGX Spark NIM inference server running (Nemotron 3 Nano, systemd managed)
+- [x] Inference routed to DGX Spark via `spark-e.enclave.kubernerdes.com:8000`
+- [x] Network policy locked to DGX Spark only (no cloud AI endpoints)
+- [x] End-to-end validation — agent ran healthcheck autonomously via Nemotron on GB10 GPU
 
 ---
+
 ## References
-https://docs.nvidia.com/dgx/dgx-spark/index.html
+
+- [NVIDIA DGX Spark documentation](https://docs.nvidia.com/dgx/dgx-spark/index.html)
+- [NVIDIA NemoClaw](https://github.com/NVIDIA/NemoClaw)
+- [NVIDIA NIM documentation](https://docs.nvidia.com/nim/index.html)
 
 > Built with [Claude Code](https://claude.ai/code) — Claude helped write every script and configuration in this repo.
